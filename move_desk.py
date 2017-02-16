@@ -6,13 +6,16 @@ pukast = time.strftime('Desktop %Y-%m-%d')
 user = raw_input('Input your user:')
 desktop = 'C:\Users\{}\Desktop'.format(user)
 new_dir = 'C:\Users\{}\Desktop\{}--{}'.format(user, pukast, str(random.randint(0,1024)))
-all_files_name = os.listdir(desktop)
 p = 0
+
 # Verify user desktop path
 if not os.path.isdir(desktop):
     print 'Specified path not found. ',
     print 'Path is \'{}\''.format(desktop)
     quit("Error 1")
+
+all_files_name = os.listdir(desktop)
+
 # Verify if the current file we want to make is not allready created
 if not os.path.exists(new_dir):
     os.makedirs(new_dir)
