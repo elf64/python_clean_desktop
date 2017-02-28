@@ -1,2 +1,4 @@
-# python_clean_desktop
-Clean the desktop with this awesome kappa script
+# Usage:
+#### python script.py
+If you want to exclude some files/folders just use -exclude
+#### python script.py -exculde test.cpp haha.txt
