@@ -1,3 +1,4 @@
+# Python version : 2.7+
 import os
 import time
 import random
