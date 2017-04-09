@@ -27,7 +27,6 @@ def run(argv):
 
     for i in all_lnk_name:
         if p2 <= len(all_lnk_name):
-            print all_lnk_name[p]
             if all_lnk_name[p2] not in sys.argv[2:]:
                 os.rename(public_desktop+'\\{}'.format(all_lnk_name[p2]),
                     new_dir+'\{}'.format(all_lnk_name[p2]))
