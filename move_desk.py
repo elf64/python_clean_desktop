@@ -38,7 +38,7 @@ def run(argv):
 
     for i in all_files_name:
         if p <= len(all_files_name):
-            if all_files_name[p] not in sys.argv[2:]:
+            if (all_files_name[p] not in sys.argv[2:]) and (all_files_name[p] != __file__):
                 os.rename(desktop+'\\{}'.format(all_files_name[p]),
                     new_dir+'\{}'.format(all_files_name[p]))
             else:
