@@ -1,14 +1,17 @@
-# Python version : 2.7+
+# Python version 2.7
 import os
 import time
 import random
 import sys
+#
+# Re-write the script without the p2 and p cuz it's bad coded!
+#
 def run(argv):
     pukast = time.strftime('Desktop %Y-%m-%d')
     user = raw_input('Input your user:')
-    desktop = 'C:\Users\{}\Desktop'.format(user)
-    public_desktop = 'C:\Users\Public\Desktop'
-    new_dir = 'C:\Users\{}\Desktop\{}--{}'.format(user, pukast, str(random.randint(0,1024)))
+    desktop = 'C:\\Users\\{}\\Desktop'.format(user)
+    public_desktop = 'C:\\Users\\Public\\Desktop'
+    new_dir = 'C:\\Users\\{}\\Desktop\\{}--{}'.format(user, pukast, str(random.randint(0,1024)))
     p2 = 0
     p = 0
     if not os.path.isdir(desktop):
@@ -38,7 +41,8 @@ def run(argv):
 
     for i in all_files_name:
         if p <= len(all_files_name):
-            if (all_files_name[p] not in sys.argv[2:]) and (all_files_name[p] != __file__):
+            if ((all_files_name[p] not in sys.argv[2:]) and
+	    	(all_files_name[p] != os.path.basename(__file__))):
                 os.rename(desktop+'\\{}'.format(all_files_name[p]),
                     new_dir+'\{}'.format(all_files_name[p]))
             else:
